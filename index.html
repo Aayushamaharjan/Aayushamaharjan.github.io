@@ -1,0 +1,183 @@
+<html>
+    <head>
+     <style>
+        nav{
+            background-color: aqua;
+            padding: 10px;
+            
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+      
+        nav a {
+            text-decoration: none;
+            color: black;
+            padding: 50px;
+            font-size: large;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 15px 0;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            border-color: #18bc9c;
+            outline: none;
+        }
+
+        .contact-form button {
+            padding: 15px 30px;
+            background-color: #18bc9c;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #16a085;
+        }
+      
+        header{
+            background-color: blueviolet;
+            text-align: center;
+        }
+        
+        section {
+            padding: 50px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .carousel{
+            width: 80%;
+            max-width: 600px;
+            margin: auto;
+            overflow: hidden;
+            position: relative;
+        }
+        .carousel img{
+            width: 400px;
+            display: none;
+            border-radius: 10px;
+       
+        }
+        .carousel img.active{
+            display: block;
+        }
+     
+     </style>
+    </head>
+    <body>
+     
+    <nav>
+        <a href="#Home">Home</a>
+        <a href="#About Me">About Me</a>
+        <a href="#Education">Education</a>
+        <a href="#Professional History">Professional History</a>
+        <a href="#Contact">Contact</a>
+    </nav>  
+    <section id="Home">
+    <header>
+        <h1>Welcome to My Webpage</h1>
+    </header>
+    
+        <div class="carousel">
+            <img src="tata.jpg" alt="tata" class="active">
+            <img src="koko.jpg" alt="koko">
+            <img src="chim.jpg" alt="chim">
+
+        </div> 
+     
+    </section>  
+     <section id="About Me">
+      <h1>About Me</h1>
+      <p>Hi! My name is Aayusha Maharjan, a professional software developer with a love for crafting seamless digital experiences.
+        I specialize in software development and have a strong eye for detail.
+      </p>
+      <p>I work primarily with java and python. I have experience in developing both web and mobile application, utilizing frameworks
+        like react, Angular and Django. My favourite part of development is turning ideas into functional software that delivers a great user experience.
+      </p>
+     </section>
+     <section id="Education">
+      
+        <div class="content">
+            <h2>My Educational</h2>
+            <p>I graduated with a degree in BCA( Bachelor in Computer and Application)from Tribhuvan University, where I developed a strong foundation in programming, algorithms, and data structures.</p>
+        </div>
+    </section>
+        
+ 
+     <section id="Professional History">
+        <h2>Professional History</h2>
+        <ul>
+            <li>
+                <strong>Software Developer</strong> - ABC Company (2022 - Present)
+                <p>Developed and maintained web applications using React and Node.js. Collaborated with designers and product managers to deliver high-quality software.</p>
+            </li>
+            <li>
+                <strong>Junior Developer</strong> - XYZ Inc. (2021 - 2023)
+                <p>Assisted in the development of internal tools and applications. Gained experience in full-stack development and agile methodologies.</p>
+            </li>
+            </ul>
+    </section>
+    
+  
+    <section id="Contact">
+      <h2>Contact</h2>
+        <div class="content">
+         
+            <form class="contact-form" action="#" method="post">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+    
+    <footer>
+        &copy; 2025 Our Website. All rights reserved.
+    </footer>
+    <script>
+        let currentIndex = 0;
+        const images = document.querySelectorAll(".carousel img");
+
+        function showImage(index) {
+            images.forEach(img => img.classList.remove("active")); // Hide all images
+            images[index].classList.add("active"); // Show the selected image
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        }
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage(currentIndex);
+        }
+
+        // Auto-slide every 3 seconds
+        setInterval(nextImage, 3000);
+    </script>
+
+    </script>
+    </body>
+    
+</html>
